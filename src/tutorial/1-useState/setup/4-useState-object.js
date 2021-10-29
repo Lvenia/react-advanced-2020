@@ -1,7 +1,29 @@
 import React, { useState } from 'react';
 
 const UseStateObject = () => {
-  return <h2>useState object example</h2>;
+  const [person, setPerson] = useState({
+    name: 'Peter',
+    age: 24,
+    favouriteDish: 'pizza'
+  });
+
+  const handleClick = () => {
+    setPerson({...person, favouriteDish: 'pasta'})
+  }
+  return (
+      <>
+        <h2>{`This is ${person.name}`}</h2>
+        <p>{`Age ${person.age}`}</p>
+        <p>{`Favourite meal: ${person.favouriteDish}`}</p>
+        <button
+            type="button"
+            className="btn"
+            onClick={handleClick}
+        >
+          Change meal to pasta
+        </button>
+      </>
+  )
 };
 
 export default UseStateObject;
