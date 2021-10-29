@@ -13,8 +13,8 @@ const UseStateObject = () => {
   return (
       <>
         <h2>{`This is ${person.name}`}</h2>
-        <p>{`Age ${person.age}`}</p>
-        <p>{`Favourite meal: ${person.favouriteDish}`}</p>
+        <p className="item">{`Age ${person.age}`}</p>
+        <p className="item">{`Favourite meal: ${person.favouriteDish}`}</p>
         <button
             type="button"
             className="btn"
