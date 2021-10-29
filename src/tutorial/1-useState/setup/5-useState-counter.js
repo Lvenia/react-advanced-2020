@@ -3,15 +3,19 @@ import React, { useState } from 'react';
 const UseStateCounter = () => {
   const [value, setValue] = useState(0);
 
-  //click handlers
+  //setValue using prevState ensures correct value and correct order (especially meters with Async JS)
   const handleDecrease = () => {
-    setValue(prevState => prevState - 1);
+    setTimeout(() => {
+      setValue(prevState => prevState - 1);
+    }, 1000)
   };
   const handleReset = () => {
     setValue(0);
   };
   const handleIncrease = () => {
-    setValue(prevState => prevState + 1);
+    setTimeout(() => {
+      setValue(prevState => prevState + 1);
+    }, 1000)
   };
 
   return (
