@@ -8,7 +8,9 @@ const UseStateObject = () => {
   });
 
   const handleClick = () => {
-    setPerson({...person, favouriteDish: 'pasta'})
+    setPerson(prevState => {
+        return {...prevState, favouriteDish: 'pasta'}
+    })
   }
   return (
       <>

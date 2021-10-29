@@ -4,8 +4,9 @@ import { data } from '../../../data';
 const UseStateArray = () => {
   const [people, setPeople] = useState(data);
   const removeItem = (id) => {
-      const newList = people.filter((el) => el.id !== id);
-      setPeople(newList);
+      setPeople(prevState => {
+          return people.filter((el) => el.id !== id)
+      })
   }
   return (
       <>
