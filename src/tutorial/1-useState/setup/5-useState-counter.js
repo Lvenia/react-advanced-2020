@@ -7,15 +7,17 @@ const UseStateCounter = () => {
   const handleDecrease = () => {
     setTimeout(() => {
       setValue(prevState => prevState - 1);
-    }, 1000)
+    }, 1000);
   };
   const handleReset = () => {
-    setValue(0);
+      setTimeout(() => {
+          setValue(0);
+      }, 1000);
   };
   const handleIncrease = () => {
     setTimeout(() => {
       setValue(prevState => prevState + 1);
-    }, 1000)
+    }, 1000);
   };
 
   return (
