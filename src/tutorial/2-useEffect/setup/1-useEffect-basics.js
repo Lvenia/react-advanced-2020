@@ -9,7 +9,7 @@ const UseEffectBasics = () => {
     if (count > 0) {
       document.title = `New messages(${count})`;
     }
-  });
+  }, []);
 
   return (
       <>
