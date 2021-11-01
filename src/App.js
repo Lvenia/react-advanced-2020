@@ -1,10 +1,12 @@
 import React from 'react';
-import Setup from './tutorial/1-useState/setup/4-useState-object';
+import Setup from './tutorial/1-useState/setup/birthdayReminderProject/App';
 function App() {
   return (
-    <div className='container'>
-      <Setup/>
-    </div>
+    <main>
+        <section className='container'>
+            <Setup/>
+        </section>
+    </main>
   )
 }
 
