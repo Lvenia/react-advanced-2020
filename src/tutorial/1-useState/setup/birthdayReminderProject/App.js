@@ -5,7 +5,6 @@ import styles from "./style.css";
 
 const App = () => {
     const [listItems, setListItems] = useState(DATA);
-    const [hideList, setHideList] = useState(true);
 
     const handleClick = () => {
         if(listItems.length > 0) {
@@ -13,7 +12,6 @@ const App = () => {
         } else {
             setListItems(DATA);
         }
-        setHideList(prevState => !prevState);
     }
 
     return (
@@ -25,7 +23,7 @@ const App = () => {
                 type="button"
                 onClick={handleClick}
             >
-                {hideList ? "Hide List" : "Show List"}
+                {listItems.length > 0 ? "Hide List" : "Show List"}
             </button>
         </>
     )
