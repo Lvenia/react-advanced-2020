@@ -3,7 +3,25 @@ import React, { useState, useEffect } from 'react';
 // cleanup function
 // second parameter
 const UseEffectBasics = () => {
-  return <h2>useEffect Basics</h2>;
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `New messages(${count})`;
+  });
+
+  return (
+      <>
+      <h2>{count}</h2>
+        <button
+            type="button"
+            className="btn"
+            onClick={() => setCount(count+1) }
+        >
+          Increment
+        </button>
+
+      </>
+  )
 };
 
 export default UseEffectBasics;
