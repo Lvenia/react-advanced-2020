@@ -6,7 +6,9 @@ const UseEffectBasics = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `New messages(${count})`;
+    if (count > 0) {
+      document.title = `New messages(${count})`;
+    }
   });
 
   return (
