@@ -293,6 +293,7 @@ p {
   align-items: center;
   justify-content: space-around;
   width: 50%;
+  height: 12rem;
   margin: auto;
   padding: 1rem;
   background-color: rgba(176, 196, 222, 0.3);

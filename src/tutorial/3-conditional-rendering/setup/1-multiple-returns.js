@@ -27,11 +27,19 @@ const MultipleReturns = () => {
   }, []);
 
   if(isLoading) {
-    return <h2>Loading...</h2>
+    return (
+        <div className="card">
+          <h3>Loading...</h3>
+        </div>
+    )
   }
 
   if(isError) {
-    return <h2>Error</h2>
+    return (
+        <div className="card">
+          <h3>Error</h3>
+        </div>
+    )
   }
 
   const {avatar_url, login, html_url} = user;
