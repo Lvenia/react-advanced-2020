@@ -31,11 +31,8 @@ const UseEffectFetchData = () => {
             })}
           </ul>
       )
-    } else {
-      return <h4>No data available due to exceeded rate limit </h4>
     }
   }
-
 
   return (
       <>
