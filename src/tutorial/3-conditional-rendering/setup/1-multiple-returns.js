@@ -17,8 +17,8 @@ const MultipleReturns = () => {
           }
         })
         .then(user => {
-          setIsLoading(false);
           setUser(user);
+          setIsLoading(false);
         })
         .catch(err => {
           setIsError(true);
