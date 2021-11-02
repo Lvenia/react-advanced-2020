@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 const url = 'https://api.github.com/users';
 
 const UseEffectFetchData = () => {
@@ -17,7 +16,7 @@ const UseEffectFetchData = () => {
   const renderContent = () => {
     if(data.length > 0) {
       return (
-          <ul>
+          <ul className="users">
             {data.map(item => {
               const {id, login, avatar_url, html_url} = item;
               return (
