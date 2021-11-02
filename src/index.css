@@ -225,6 +225,7 @@ p {
   border-radius: var(--radius);
   padding: 0.25rem 0.5rem;
 }
+
 .form-control {
   margin: 0.5rem 0;
   display: grid;
