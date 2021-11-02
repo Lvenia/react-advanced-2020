@@ -9,14 +9,15 @@ const MultipleReturns = () => {
     setIsLoading(true);
     fetch(url)
         .then(response => {
-          setIsLoading(false);
           if(response.status === 200) {
             return response.json();
           } else {
+            setIsLoading(false);
             throw new Error(response.statusText)
           }
         })
         .then(user => {
+          setIsLoading(false);
           setUser(user);
         })
         .catch(err => {
