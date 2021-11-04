@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {createPortal} from "react-dom";
 // JS
 // const input = document.getElementById('myText');
 // const inputValue = input.value
