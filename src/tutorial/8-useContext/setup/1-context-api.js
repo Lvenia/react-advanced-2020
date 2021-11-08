@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { data } from '../../../data';
-// more components
-// fix - context api, redux (for more complex cases)
+
+//create context
+const PersonContext = React.createContext();
 
 const ContextAPI = () => {
   const [people, setPeople] = useState(data);
@@ -11,14 +12,16 @@ const ContextAPI = () => {
     });
   };
   return (
-    <>
-      <h3>prop drilling</h3>
+    // wrap top element
+    <PersonContext.Provider value={removePerson}>
+      <h3>useContext hook</h3>
       <List people={people} removePerson={removePerson} />
-    </>
+    </PersonContext.Provider>
   );
 };
 
-const List = ({ people, removePerson }) => {
+//removePerson omits List element
+const List = ({ people }) => {
   return (
     <>
       {people.map((person) => {
@@ -26,7 +29,6 @@ const List = ({ people, removePerson }) => {
           <SinglePerson
             key={person.id}
             {...person}
-            removePerson={removePerson}
           />
         );
       })}
@@ -34,11 +36,13 @@ const List = ({ people, removePerson }) => {
   );
 };
 
-const SinglePerson = ({ id, name, removePerson }) => {
+//use created context to reach Provider's value property
+const SinglePerson = ({ id, name}) => {
+  const removeItem = useContext(PersonContext);
   return (
     <div className='item'>
       <h4>{name}</h4>
-      <button onClick={() => removePerson(id)}>remove</button>
+      <button onClick={() => removeItem(id)}>remove</button>
     </div>
   );
 };
