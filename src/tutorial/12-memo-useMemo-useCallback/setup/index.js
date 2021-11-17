@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { useFetch } from '../../9-custom-hooks/final/2-useFetch'
 
-// ATTENTION!!!!!!!!!!
-// I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/javascript-store-products'
 
-// every time props or state changes, component re-renders
-
 const Index = () => {
-  const { products } = useFetch(url)
-  const [count, setCount] = useState(0)
+  const { products } = useFetch(url);
+  const [count, setCount] = useState(0);
+    useEffect(() => {
+        console.count("Index element")
+    })
+
 
   return (
     <>
@@ -22,17 +22,23 @@ const Index = () => {
   )
 }
 
-const BigList = ({ products }) => {
-  return (
-    <section className='products'>
-      {products.map((product) => {
-        return <SingleProduct key={product.id} {...product}></SingleProduct>
-      })}
-    </section>
-  )
-}
+const BigList = React.memo(({ products }) => {
+    useEffect(() => {
+        console.count("List element")
+    })
+    return (
+        <section className='products'>
+            {products.map((product) => {
+                return <SingleProduct key={product.id} {...product}></SingleProduct>
+            })}
+        </section>
+    )
+})
 
 const SingleProduct = ({ fields }) => {
+ useEffect(() => {
+    console.count("Article element")
+ })
   let { name, price } = fields
   price = price / 100
   const image = fields.image[0].url
